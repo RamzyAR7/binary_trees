@@ -61,16 +61,23 @@ int left_shifted(const binary_tree_t *tree)
 */
 int binary_tree_is_complete(const binary_tree_t *tree)
 {
+	binary_tree_t *current;
+
 	if (tree == NULL)
 		return (0);
 	if (binary_tree_balance(tree) == 0)
 	{
 		if (is_full(tree) == 1)
 		{
-			if (binary_tree_balance(tree->left) == 0)
-			return (1);
+			current = tree;
+			while (current->left != NULL && binary_tree_balance(current->left) == 0)
+			{
+				current = current->left;
+			}
+			if (current == NULL)
+				return (1);
 			else
-			return (0);
+				return (0);
 		}
 		if (is_full(tree->right) == 1 && is_full(tree->left) == 0)
 			return (0);
