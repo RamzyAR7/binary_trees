@@ -74,7 +74,7 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 	binary_tree_t *current;
 	int going = 1;
 
-	if (tree == NULL)
+	if (tree == NULL || func == NULL)
 		return;
 	current = (binary_tree_t *)tree;
 	make_q(&queue, &current);
