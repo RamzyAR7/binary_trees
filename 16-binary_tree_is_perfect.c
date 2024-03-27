@@ -7,13 +7,13 @@
 */
 int power(int num, int factor)
 {
-	int i = 0, result = 0;
+	int i = 0, result = 1;
 
 	if (factor == 0)
 		return (1);
 	while (i < factor)
 	{
-		result += num;
+		result *= num;
 		i++;
 	}
 	return (result);
