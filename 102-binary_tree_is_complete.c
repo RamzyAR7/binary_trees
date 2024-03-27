@@ -65,6 +65,14 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		return (0);
 	if (binary_tree_balance(tree) == 0)
 	{
+		if (is_full(tree) == 1)
+		{
+			if (binary_tree_balance(tree->left) == 0 &&
+			binary_tree_balance(tree->right) == 0)
+			return (1);
+			else
+			return (0);
+		}
 		if (is_full(tree->right) == 1 && is_full(tree->left) == 0)
 			return (0);
 		if (left_shifted(tree) == 1 || left_shifted(tree) < 0)
