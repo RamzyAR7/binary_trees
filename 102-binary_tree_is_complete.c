@@ -69,7 +69,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	{
 		if (is_full(tree) == 1)
 		{
-			current = tree;
+			current = (binary_tree_t *)tree;
 			while (current->left != NULL && binary_tree_balance(current->left) == 0)
 			{
 				current = current->left;
