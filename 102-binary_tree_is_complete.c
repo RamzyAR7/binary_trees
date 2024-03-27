@@ -40,15 +40,19 @@ int is_full(const binary_tree_t *tree)
 	return (is_full(tree->left) * is_full(tree->right));
 }
 /**
- * binary_tree_is_full - checks if a binary tree is full
+ * left_shifted - checks if a binary tree is left shifted
  * @tree: pointer to the root node
- * Return: 1 if full else 0
+ * Return: 1 or negative if left shifted else 0 or > 1
 */
-int binary_tree_is_full(const binary_tree_t *tree)
+int left_shifted(const binary_tree_t *tree)
 {
 	if (tree == NULL)
+		return (1);
+	if (tree->left != NULL && tree->right == NULL)
+		return (-2);
+	if (tree->left == NULL && tree->right != NULL)
 		return (0);
-	return (is_full(tree));
+	return (left_shifted(tree->left) * left_shifted(tree->right));
 }
 /**
  * binary_tree_is_complete - checks if a binary tree is complete
@@ -59,8 +63,24 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 {
 	if (tree == NULL)
 		return (0);
-	if (binary_tree_balance(tree) == 0 && binary_tree_is_full(tree) == 1)
-		return (1);
+	if (binary_tree_balance(tree) == 0)
+	{
+		if (is_full(tree) == 1)
+			return (1);
+		if (is_full(tree->right) == 1 && is_full(tree->left) == 0)
+			return (0);
+		if (left_shifted(tree) == 1 || left_shifted(tree) < 0)
+			return (1);
+		else
+			return (0);
+	}
+	else if (binary_tree_balance(tree) == 1)
+	{
+		if (left_shifted(tree) == 1 || left_shifted(tree) < 0)
+			return (1);
+		else
+			return (0);
+	}
 	else
 		return (0);
 }
