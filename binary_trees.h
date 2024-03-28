@@ -72,6 +72,8 @@ void bst_check_left(binary_tree_t *tree, int *indicator, int root);
 void bst_check_right(binary_tree_t *tree, int *indicator, int root);
 bst_t *bst_insert(bst_t **tree, int value);
 void locate_position(bst_t **tree, bst_t **inserted);
+bst_t *array_to_bst(int *array, size_t size);
+
 
 
 
