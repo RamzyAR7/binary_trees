@@ -2,7 +2,7 @@
 # Binary Trees Project
 ![Logo](https://github.com/RamzyAR7/simple_shell/blob/main/Images/11ownload.jpeg)
 ## Description
-
+Data structures
 This project focuses on implementing various operations and algorithms related to binary trees in the C programming language. The tasks include understanding the concepts of binary trees, tree traversal methods, and characteristics of different types of binary trees.
 
 ## Learning Objectives
