@@ -58,5 +58,9 @@ int binary_tree_is_bst(const binary_tree_t *tree)
 		return (0);
 	bst_check_left(tree->left, &indicator, tree->n);
 	bst_check_right(tree->right, &indicator, tree->n);
+	if (tree->left != NULL)
+		binary_tree_is_bst(tree->left);
+	if (tree->right != NULL)
+		binary_tree_is_bst(tree->right);
 	return (indicator);
 }
