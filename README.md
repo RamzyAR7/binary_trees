@@ -44,6 +44,7 @@ To use the functions implemented in this project, include the `binary_trees.h` h
 ```bash
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 main.c 0-binary_tree_node.c -o binary_tree
 ./binary_tree
+```
 
 ## Developers:
 
