@@ -70,6 +70,9 @@ binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 int binary_tree_is_bst(const binary_tree_t *tree);
 void bst_check_left(binary_tree_t *tree, int *indicator, int root);
 void bst_check_right(binary_tree_t *tree, int *indicator, int root);
+bst_t *bst_insert(bst_t **tree, int value);
+void locate_position(bst_t **tree, bst_t **inserted);
+
 
 
 #endif /* _BINARY_TREES_H_ */
