@@ -11,7 +11,7 @@ void bst_check_right(binary_tree_t *tree, int *indicator, int root)
 		return;
 	bst_check_right(tree->left, indicator, root);
 	bst_check_right(tree->right, indicator, root);
-	if (tree->n >= root)
+	if (tree->n > root)
 	{
 		*indicator *= 1;
 		return;
