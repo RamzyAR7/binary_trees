@@ -75,5 +75,6 @@ void locate_position(bst_t **tree, bst_t **inserted);
 bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);
 void search_bst(bst_t **tree, bst_t **target, int value);
+bst_t *bst_remove(bst_t *root, int value);
 
 #endif /* _BINARY_TREES_H_ */
